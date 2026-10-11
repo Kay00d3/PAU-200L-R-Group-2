@@ -1,0 +1,9 @@
+Product,Quantity,Unit_Price,Customer_Type
+Laptop,2,450000,New
+Mouse,10,7500,Returning
+Keyboard,5,15000,New
+Monitor,3,120000,Returning
+Headset,8,25000,New
+Printer,2,95000,Returning
+USB_Drive,15,8000,New
+Webcam,4,35000,Returning
