@@ -1,3 +1,4 @@
+
 # ==========================================
 # GROUP 2 — Small Business Sales Analysis
 # Course: R Programming (200 Level)
@@ -8,6 +9,14 @@
 # TASK A: Import and Inspect the Data (Assigned to: Moyo Iyanda)
 # ------------------------------------------
 # TODO: Import the dataset using read.csv() and inspect structure/types.
+sales <- read.csv("business_sales.csv")
+head(sales)
+names(sales)       
+str(sales)         
+summary(sales)
+class(sales$Quantity)
+class(sales$Unit_Price)
+# The dataset contains 8 observations across 4 variables. Quantity and Unit_Price are both stored as integers, confirming they are numeric and suitable for calculations. No missing values or data type issues were detected.
 
 
 # ------------------------------------------
