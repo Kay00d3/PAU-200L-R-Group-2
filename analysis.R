@@ -20,7 +20,7 @@
 # TASK C: Conditional Logic (Assigned to: Faisal Farouk-Muazu)
 # ------------------------------------------
 # TODO: Create Sales_Level ("High" if >= 100000, else "Low").
-
+sales$sales_level <- ifelse(sales$total_sales >= 100000, "High", "Low")
 
 # ------------------------------------------
 # TASK D: Logical Operations (Assigned to: Iheomachisom Ugwunweze)
