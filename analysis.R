@@ -14,7 +14,7 @@
 # TASK B: Computational Operations (Assigned to: Godreigns Amedari)
 # ------------------------------------------
 # TODO: Create Total_Sales by multiplying Quantity by Unit_Price.
-
+df$total_sales <- df$quantity * df$unit_price
 
 # ------------------------------------------
 # TASK C: Conditional Logic (Assigned to: Faisal Farouk-Muazu)
