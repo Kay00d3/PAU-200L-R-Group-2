@@ -1,4 +1,3 @@
-
 # ==========================================
 # GROUP 2 — Small Business Sales Analysis
 # Course: R Programming (200 Level)
@@ -9,14 +8,6 @@
 # TASK A: Import and Inspect the Data (Assigned to: Moyo Iyanda)
 # ------------------------------------------
 # TODO: Import the dataset using read.csv() and inspect structure/types.
-sales <- read.csv("business_sales.csv")
-head(sales)
-names(sales)       
-str(sales)         
-summary(sales)
-class(sales$Quantity)
-class(sales$Unit_Price)
-# The dataset contains 8 observations across 4 variables. Quantity and Unit_Price are both stored as integers, confirming they are numeric and suitable for calculations. No missing values or data type issues were detected.
 
 
 # ------------------------------------------
@@ -29,7 +20,7 @@ class(sales$Unit_Price)
 # TASK C: Conditional Logic (Assigned to: Faisal Farouk-Muazu)
 # ------------------------------------------
 # TODO: Create Sales_Level ("High" if >= 100000, else "Low").
-sales$sales_level <- ifelse(sales$total_sales >= 100000, "High", "Low")
+
 
 # ------------------------------------------
 # TASK D: Logical Operations (Assigned to: Iheomachisom Ugwunweze)
@@ -37,13 +28,16 @@ sales$sales_level <- ifelse(sales$total_sales >= 100000, "High", "Low")
 # TODO: Create Priority (TRUE if Total_Sales >= 100000 & Customer_Type == "Returning").
 
 
-# ------------------------------------------
-# TASK E: Missing Values (Assigned to: Olukayode Ogunmoroti)
-# ------------------------------------------
-# TODO: Change Webcam unit price to NA, recalculate Total_Sales, count NA, compute mean excluding NA.
+# Task E: Set Webcam unit price to NA and recalculate[cite: 2]
+df$Unit_Price[df$Product == "Webcam"] <- NA
+df$Total_Sales <- df$Quantity * df$Unit_Price
 
+missing_count <- sum(is.na(df$Unit_Price))
+mean_price <- mean(df$Unit_Price, na.rm = TRUE)
 
-# ------------------------------------------
-# TASK F: Analysis and Export (Assigned to: Olukayode Ogunmoroti)
-# ------------------------------------------
-# TODO: Find product with highest sales, count high-sales & priority products, export to business_sales_processed.csv.
+# Task F: Analysis and Export[cite: 2]
+top_product <- df$Product[which.max(df$Total_Sales)]
+high_sales_count <- sum(df$Sales_Level == "High", na.rm = TRUE)
+priority_count <- sum(df$Priority == TRUE, na.rm = TRUE)
+
+write.csv(df, "business_sales_processed.csv", row.names = FALSE)
